@@ -67,6 +67,8 @@ public:
   bool isItalic()const;
   /// Has the text shadows
   bool hasShadow()const;
+  // Size of vtkTextProperty
+  double size()const;
 
 public Q_SLOTS:
   void setTextProperty(vtkTextProperty* textProperty);
@@ -79,6 +81,7 @@ public Q_SLOTS:
   void setBold(bool enable);
   void setItalic(bool enable);
   void setShadow(bool enable);
+  void setSize(double size);
 
 Q_SIGNALS:
   void textChanged(const QString& text);
@@ -88,6 +91,7 @@ Q_SIGNALS:
   void boldChanged(bool enable);
   void italicChanged(bool enable);
   void shadowChanged(bool enable);
+  void sizeChanged(double size);
 
 protected Q_SLOTS:
   void updateFromTextProperty();
